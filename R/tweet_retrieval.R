@@ -21,7 +21,7 @@ tweets <- function(inputdate, filter_word = "") {
   # getting tweets using twitteR API
   twitteR::setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
 
-  tw = twitteR::searchTwitter(paste0("Trump ", "+ ", filter_word), n = 2500,
+  tw = twitteR::searchTwitter(paste0("Trump ", "+ ", filter_word), n = 1000,
                               since = as.character(inputdate - 1), until = as.character(inputdate),
                               lang = 'en', retryOnRateLimit = 1e3)
   d = twitteR::twListToDF(tw)
